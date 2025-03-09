@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
-$user = "root"; // Change if needed
-$password = ""; // Change if needed
+$user = "root";
+$password = "";
 $database = "appointments";
 
 
@@ -16,7 +16,6 @@ if ($conn->connect_error) {
 $id = $_GET['id'] ?? '';
 
 if (!empty($id)) {
-    // Delete the booking
     $sql = "DELETE FROM bookings WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
